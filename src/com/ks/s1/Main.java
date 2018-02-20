@@ -6,8 +6,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("Program Start");
-		//SchoolController s = new SchoolController();
-		new SchoolController().start(); //한번쓰고 더이상 안쓸때 이런 형태로 쓴다
+		SchoolController s = new SchoolController();
+		s.start(); //한번쓰고 더이상 안쓸때 이런 형태로 쓴다
 		//s.start();
 		
 		//객체: 눈에 보이는 사물또는 개념
