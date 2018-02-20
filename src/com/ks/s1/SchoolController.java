@@ -15,7 +15,9 @@ public class SchoolController {
 	
 	public void start() {
 		Scanner sc = new Scanner(System.in);
-		
+		StudentService s = new StudentService();
+		Student [] students = null;
+		StudentView v = new StudentView();
 		boolean check = true;
 		
 		while(check) {
@@ -31,18 +33,20 @@ public class SchoolController {
 			
 			case 1:
 				System.out.println("학생등록");
-				//String name = sc.next();
+				students = s.addStudent();
 				break;
 			case 2:
 				System.out.println("성적 입력");
-				//int b = sc.nextInt();
+				
 				break;
 			case 3:
+				
 				System.out.println("성적조회");
-				//String name2 = sc.next();
+				
 				break;
 			case 4:
 				System.out.println("전체조회");
+				v.view(students);
 				break;
 			case 5:
 				System.out.println("프로그램종료");
@@ -50,6 +54,8 @@ public class SchoolController {
 				break;
 			default:
 				System.out.println("번호를 잘못선택했습니다");
+				check = false;
+				
 			}
 			
 			
