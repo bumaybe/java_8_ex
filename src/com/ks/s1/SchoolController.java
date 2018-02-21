@@ -17,7 +17,6 @@ public class SchoolController {
 		Scanner sc = new Scanner(System.in);
 		StudentService s = new StudentService();
 		Student [] students = null;
-		Student [] c = null;
 		StudentView v = new StudentView();
 		boolean check = true;
 
@@ -38,11 +37,12 @@ public class SchoolController {
 				break;
 			case 2:
 				System.out.println("성적 입력");
-				students = s.addPoint(students);
+				s.addPoint(students);
 				break;
 			case 3:
 				System.out.println("성적조회");
-
+				Student y = s.search(students);
+				v.viewStudent(y);
 				break;
 			case 4:
 				System.out.println("전체조회");

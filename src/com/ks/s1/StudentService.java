@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class StudentService {
 	
-	private Object addPoint;
 	//학생추가 메서드
 	//메서드명 addStudent
 	//학생의 인원수를 입력
@@ -50,17 +49,16 @@ public class StudentService {
 	//학생 한명을 찾아서
 	//해당학생 출력은 StudentView에서 viewStudent메서드에서 출력
 	
-	public int search(Student [] students) {
+	public Student search(Student [] students) {
 		Scanner sc = new Scanner(System.in);
-		int k = 0;
+		int i;
 		System.out.println("번호를 입력하세요");
 		int a = sc.nextInt();
-		
-		for(int i = 0; i<students.length; i++) {
+		for(i = 0; i<students.length; i++) {
 			if(students[i].num==a) {
-				k =i;
+				break;
 			}
 		}
-		return k;
+		return students[i];
 	}
 }
