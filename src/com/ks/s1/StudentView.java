@@ -2,6 +2,8 @@ package com.ks.s1;
 
 public class StudentView {
 	
+	private Object students;
+
 	//학생들의 정보를 출력
 	//메서드명 view
 	
@@ -18,4 +20,12 @@ public class StudentView {
 		System.out.println("평균 :"+students[i].avg);
 		}
 	}
+	
+	public void viewStudent(Student [] students, int k) {
+		System.out.println("국어 :" +students[k].kor);
+		System.out.println("영어 :"+students[k].eng);
+		System.out.println("수학 :"+students[k].math);
+		System.out.println("총합 :"+students[k].total);
+		System.out.println("평균 :"+students[k].avg);
+}
 }

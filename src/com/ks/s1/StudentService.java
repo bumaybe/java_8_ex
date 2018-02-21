@@ -30,22 +30,37 @@ public class StudentService {
 	}
 	//메서드명 addPoint
 	//각 학생의 점수 입력(국,영,수)
-	public Student [] addPoint(Student [] c) {
+	public Student [] addPoint(Student [] students) {
 		Scanner sc = new Scanner(System.in);
-		StudentService b = new StudentService();
-		SchoolController sr = new SchoolController();
-				for(int a = 0; a<c.length; a++) {
-			Student st = new Student();
-			System.out.println(c[a].name+"학생의 국어점수를 입력하세요");
-			c[a].kor = sc.nextInt();
-			System.out.println(c[a].name+"번쨰 학생의 영어점수를 입력하세요");
-			c[a].eng = sc.nextInt();
-			System.out.println(c[a].name+"번쨰 학생의 수학점수를 입력하세요");
-			c[a].math = sc.nextInt();
-			c[a].total = c[a].kor +c[a].eng+c[a].math;
-			c[a].avg = c[a].total/3.0;
+				for(int a = 0; a<students.length; a++) {
+			System.out.println(students[a].name+"학생의 국어점수를 입력하세요");
+			students[a].kor = sc.nextInt();
+			System.out.println(students[a].name+"번쨰 학생의 영어점수를 입력하세요");
+			students[a].eng = sc.nextInt();
+			System.out.println(students[a].name+"번쨰 학생의 수학점수를 입력하세요");
+			students[a].math = sc.nextInt();
+			students[a].total = students[a].kor +students[a].eng+students[a].math;
+			students[a].avg = students[a].total/3.0;
 		}
-		return c;
+		return students;
 	}
 	
+	//메서드명 search
+	//번호를 입력받아서
+	//학생 한명을 찾아서
+	//해당학생 출력은 StudentView에서 viewStudent메서드에서 출력
+	
+	public int search(Student [] students) {
+		Scanner sc = new Scanner(System.in);
+		int k = 0;
+		System.out.println("번호를 입력하세요");
+		int a = sc.nextInt();
+		
+		for(int i = 0; i<students.length; i++) {
+			if(students[i].num==a) {
+				k =i;
+			}
+		}
+		return k;
+	}
 }

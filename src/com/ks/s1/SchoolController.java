@@ -41,7 +41,6 @@ public class SchoolController {
 				students = s.addPoint(students);
 				break;
 			case 3:
-
 				System.out.println("성적조회");
 
 				break;
